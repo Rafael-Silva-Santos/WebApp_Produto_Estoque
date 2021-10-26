@@ -1,0 +1,69 @@
+﻿@page
+@model WebEstoqueApp.Pages.Produtos.IndexModel
+@{
+}
+
+
+<div class="container-md shadow-sm p-3 mb-5 bg-body rounded">
+    <div class="row  align-items-start">
+        <div class="col ">
+         <h1>   ID </h1>
+        </div>
+
+        <div class="col  ">
+            <b>Nome</b>
+        </div>
+        <div class="col  ">
+          <b> Tipo</b>
+        </div>
+        <div class="col">
+          <b>  Setor</b>
+        </div>
+        <div class="col ">
+            <b>Fornecedor</b>
+        </div>
+        <div class="col">
+            <b>Quantidade</b>
+        </div>
+        <div class="col" colspan="2">
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <a class="btn btn-dark me-md-2" asp-page="/Produtos/Create">Adicionar</a>
+            </div>
+        </div>
+       
+
+    </div>
+</div>
+
+@foreach (var data in Model.Produtos)
+{
+
+    <div class="container-md shadow-sm p-3 mb-5 bg-body rounded">
+        <div class="row  align-items-start">
+            <div class="col ">
+                @Html.DisplayFor(modelItem => data.Id)
+            </div>
+
+            <div class="col  ">
+                @Html.DisplayFor(modelItem => data.nome)
+            </div>
+            <div class="col  ">
+                @Html.DisplayFor(modelItem => data.tipo)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(modelItem => data.setor)
+            </div>
+            <div class="col ">
+                @Html.DisplayFor(modelItem => data.fornecedor)
+            </div>
+            <div class="col">
+                @Html.DisplayFor(modelItem => data.quantidade)
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                <button type="button" class="btn btn-success">Detalhes</button>
+                <button type="button" class="btn btn-danger">Deletar</button>
+            </div>
+
+        </div>
+    </div>
+}
